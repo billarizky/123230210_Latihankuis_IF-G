@@ -1,7 +1,7 @@
 class Menu {
-  final String nama;
-  final int harga;
-  final String gambar;
+  String nama;
+  int harga;
+  String gambar;
 
   Menu({required this.nama, required this.harga, required this.gambar});
 }

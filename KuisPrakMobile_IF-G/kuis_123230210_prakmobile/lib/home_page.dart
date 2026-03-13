@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:kuis_123230210_prakmobile/about_page.dart';
+import 'package:kuis_123230210_prakmobile/login_page.dart';
 import 'listmenu.dart';
 import 'order_page.dart';
 import 'package:kuis_123230210_prakmobile/home_page.dart';
 
 class HomePage extends StatelessWidget {
+  
+  const HomePage({super.key, required this.username});
   final String username;
-
-  const HomePage(String text, {super.key, required this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,11 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(context,
+              MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                 ),
+              );
             },
           ),
         ],
@@ -42,7 +48,9 @@ class HomePage extends StatelessWidget {
 
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, "/about");
+                Navigator.push(context,         MaterialPageRoute(
+                   builder: (context) => AboutPage(),
+                 ));
               },
               child: const Text(
                 "Klik untuk ke halaman About",
@@ -77,7 +85,7 @@ class HomePage extends StatelessWidget {
 
                       child: Row(
                         children: [
-                          Image.asset(menu.gambar, width: 70),
+                          Image.asset("aset/piring.jpg", width: 70),
 
                           const SizedBox(width: 15),
 
